@@ -1,0 +1,12 @@
+Package: CoGPS
+Title: A novel method for deciphering context-specific gene programs using single-cell and spatial transcriptomics data
+Version: 1.0.0
+Author: Lin Li
+Maintainer: Lin Li <lin.li.bioinfo@gmail.com>
+Description: CoGPS provides a computational framework for characterizing context-specific gene programs within scRNA-seq and ST datasets.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: Rmagic, Seurat, bnlearn, classInt, methods, spacexr
