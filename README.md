@@ -22,7 +22,7 @@ CoGPS is licensed under the GNU General Public License v3.0.
 
 ## Citation
 
-Please cite the following article if you use CoGPS in your research: [https://](https://)
+Please cite the following article if you use CoGPS in your research: 
 
 ## Contact
 
