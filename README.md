@@ -7,7 +7,6 @@
 ![CoGPS](https://upload-images.jianshu.io/upload_images/14476738-78ef249acf7cf569.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Installation
-
 You can install the released version of **CoGPS** with:
 
 ```r
@@ -16,14 +15,53 @@ if (!requireNamespace("devtools", quietly = TRUE))
 devtools::install_github("Lin-bioinfo/CoGPS")
 ```
 
-## License
+## Getting started
+##### 1. Static cellular contexts (the test data can be downloaded from this [drive_link](https://drive.google.com/drive/folders/1UzkEEtqDauwOAJrU7JQe-rYR3V20DyDp?usp=drive_link).
 
+```r
+library(CoGPS)
+library(parallel)
+cores = detectCores(logical = FALSE) - 1
+
+load("CoGPS_data_sc_discrete.RData")
+dat = pre_sc(x = x, label = label, modes = c("discrete"), genelist = genelist, transition_point = NULL)
+
+cl = makeCluster(cores)
+net_A = net_sc(dat$A, modes = c("discrete"), genelist = genelist, select = 1, cluster = cl, seed = 1)
+cl = makeCluster(cores)
+net_B = net_sc(dat$B, modes = c("discrete"), genelist = genelist, select = 1, cluster = cl, seed = 1)
+
+CoGPS_score_A = ident_sc_score(dat$A, net_A, seed = 1)
+CoGPS_score_B = ident_sc_score(dat$B, net_B, seed = 1)
+CoGPS_state_A = ident_sc_state(CoGPS_score_A)
+CoGPS_state_B = ident_sc_state(CoGPS_score_B)
+```
+
+##### 2. Dynamic cellular contexts
+```r
+library(CoGPS)
+library(parallel)
+cores = detectCores(logical = FALSE) - 1
+
+load("CoGPS_data_sc_continuous.RData")
+dat = pre_sc(x = x, label = label, modes = c("continuous"), genelist = genelist, transition_point = 20)
+
+cl = makeCluster(cores)
+net = net_sc(dat, modes = c("continuous"), genelist = genelist, select = 1, cluster = cl, seed = 1)
+
+CoGPS_score = ident_sc_score(x, net, seed = 1)
+CoGPS_state = ident_sc_state(CoGPS_score)
+```
+
+##### 3. Spatial contexts
+
+
+
+## License
 CoGPS is licensed under the GNU General Public License v3.0.
 
 ## Citation
-
 Please cite the following article if you use CoGPS in your research: 
 
 ## Contact
-
 Should you have any questions, please feel free to write issues for this repository or contact the author directly at [lin.li.bioinfo@gmail.com](lin.li.bioinfo@gmail.com).
