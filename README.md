@@ -16,7 +16,7 @@ devtools::install_github("Lin-bioinfo/CoGPS")
 ```
 
 ## Getting started
-##### 1. Static cellular contexts (the test data can be downloaded from this [drive_link](https://drive.google.com/drive/folders/1UzkEEtqDauwOAJrU7JQe-rYR3V20DyDp?usp=drive_link).
+#### 1. Static cellular contexts (the test data can be downloaded from this [drive_link](https://drive.google.com/drive/folders/1UzkEEtqDauwOAJrU7JQe-rYR3V20DyDp?usp=drive_link).
 
 ```r
 library(CoGPS)
@@ -37,7 +37,7 @@ CoGPS_state_A = ident_sc_state(CoGPS_score_A)
 CoGPS_state_B = ident_sc_state(CoGPS_score_B)
 ```
 
-##### 2. Dynamic cellular contexts
+#### 2. Dynamic cellular contexts
 ```r
 library(CoGPS)
 library(parallel)
@@ -53,7 +53,7 @@ CoGPS_score = ident_sc_score(x, net, seed = 1)
 CoGPS_state = ident_sc_state(CoGPS_score)
 ```
 
-##### 3. Spatial contexts
+#### 3. Spatial contexts
 
 
 
