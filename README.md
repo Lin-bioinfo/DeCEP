@@ -4,7 +4,7 @@
 
 `CoGPS` is a computational framework for characterizing context-specific gene programs within scRNA-seq and ST datasets. `CoGPS` leverages directed graphs and functional gene lists to construct functional networks underlying distinct cellular and spatial contexts, which further identifies context-dependent hub genes based on the topology of networks and assigns activity levels of gene programs to individual cells or spatial locations.
 
-![CoGPS](https://upload-images.jianshu.io/upload_images/14476738-56b1330f779058bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![CoGPS](https://upload-images.jianshu.io/upload_images/14476738-78ef249acf7cf569.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Installation
 
