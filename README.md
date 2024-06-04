@@ -16,7 +16,7 @@ devtools::install_github("Lin-bioinfo/CoGPS")
 ```
 
 ## Getting started
-#### 1. Static cellular contexts (the test data can be downloaded from this [drive_link](https://drive.google.com/drive/folders/1UzkEEtqDauwOAJrU7JQe-rYR3V20DyDp?usp=drive_link).
+##### 1. Static cellular contexts (the test data can be downloaded from this [drive_link](https://drive.google.com/drive/folders/1UzkEEtqDauwOAJrU7JQe-rYR3V20DyDp?usp=drive_link).
 
 ```r
 library(CoGPS)
@@ -37,7 +37,7 @@ CoGPS_state_A = ident_sc_state(CoGPS_score_A)
 CoGPS_state_B = ident_sc_state(CoGPS_score_B)
 ```
 
-#### 2. Dynamic cellular contexts
+##### 2. Dynamic cellular contexts
 ```r
 library(CoGPS)
 library(parallel)
@@ -53,8 +53,18 @@ CoGPS_score = ident_sc_score(x, net, seed = 1)
 CoGPS_state = ident_sc_state(CoGPS_score)
 ```
 
-#### 3. Spatial contexts
+##### 3. Spatial contexts
+```r
+load("CoGPS_data_st.RData")
+st_anno = pre_st(x_counts, coords, genelist, ref, cell_state, core_number = 2)
+roiID = st_anno[st_anno$CoGPS_state == "High", "spot_ID"]
+x_st = net_st_pre(x_data, coords, genelist, roiID, r = 60)
 
+cl = makeCluster(cores)
+net_st = net_st(x_st$dat, genelist, select = 1, cluster = cl, seed = 1)
+involvedID = c(roiID, x_st$neighborID)
+CoGPS_score = ident_st_score(x_impute, involvedID, net_st)   # use data after imputation
+```
 
 
 ## License
