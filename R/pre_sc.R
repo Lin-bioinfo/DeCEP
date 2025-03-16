@@ -5,7 +5,7 @@
 #'
 #' @param x A data frame or a Seurat object containing single-cell gene expression data (library size normalization and log2 transformation). For a data frame, each row represents a cell, and each column represents a gene.
 #' @param label A data frame containing two columns (the column names are "cell_ID" and "cell_label"). It records the cellular context labels of individual cells.
-#' @param modes The running mode of CoGPS, "discrete" or "continuous".
+#' @param modes The running mode of DeCEP, "discrete" or "continuous".
 #' @param transition_point Numerical. The transition point of a specific gene program. It needs to be specified when modes = "continuous".
 #' @param genelist A data frame containing one column (the column name is "gene"). It records the functional gene list that reflects a specific gene program.
 #' @return Processed data. If modes = "discrete" it returns a list containing a series of data frames, if modes = "continuous" it returns a data frame via the time-lag method.
