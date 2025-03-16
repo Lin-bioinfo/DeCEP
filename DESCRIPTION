@@ -1,9 +1,9 @@
-Package: CoGPS
+Package: DeCEP
 Title: A novel method for deciphering context-specific gene programs using single-cell and spatial transcriptomics data
 Version: 1.0.0
 Author: Lin Li
 Maintainer: Lin Li <lin.li.bioinfo@gmail.com>
-Description: CoGPS provides a computational framework for characterizing context-specific gene programs within scRNA-seq and ST datasets.
+Description: DeCEP provides a computational framework for characterizing context-specific gene programs using scRNA-seq and ST data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
