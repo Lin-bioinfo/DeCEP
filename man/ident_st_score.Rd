@@ -2,7 +2,7 @@
 % Please edit documentation in R/ident_st.R
 \name{ident_st_score}
 \alias{ident_st_score}
-\title{Cell identity characterization (CoGPS score) of ST data}
+\title{Cell identity characterization (DeCEP score) of ST data}
 \usage{
 ident_st_score(x_impute, involvedID, net)
 }
@@ -14,7 +14,7 @@ ident_st_score(x_impute, involvedID, net)
 \item{net}{A context-dependent functional network obtained by \link{net_st}.}
 }
 \value{
-A data frame with two columns (the column names are "spot_ID" and "CoGPS_score").
+A data frame with two columns (the column names are "spot_ID" and "DeCEP_score").
 }
 \description{
 \code{ident_st_score} quantifies the activity of context-specific gene program depend on \link{net_st} for individual spatial locations.
