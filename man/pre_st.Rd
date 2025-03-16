@@ -2,7 +2,7 @@
 % Please edit documentation in R/pre_st.R
 \name{pre_st}
 \alias{pre_st}
-\title{Data preprocessing and cell identity characterization (CoGPS state) of spatial transcriptomics (ST) data}
+\title{Data preprocessing and cell identity characterization (DeCEP state) of spatial transcriptomics (ST) data}
 \usage{
 pre_st(x, coords, genelist, ref, cell_state, core_number = 2)
 }
@@ -15,12 +15,12 @@ pre_st(x, coords, genelist, ref, cell_state, core_number = 2)
 
 \item{ref}{A reference scRNA-seq dataset. A data frame or a Seurat object containing single-cell gene expression data (raw count). For a data frame, each row represents a gene, and each column represents a cell.}
 
-\item{cell_state}{A data frame containing the CoGPS states of a specific gene program corresponding to individual cells in the reference scRNA-seq dataset.}
+\item{cell_state}{A data frame containing the DeCEP states of a specific gene program corresponding to individual cells in the reference scRNA-seq dataset.}
 
 \item{core_number}{The number of cores to use for parallel processing. If set to 1, no parallel processing is used.}
 }
 \value{
-A data frame with two columns (the column names are "spot_ID" and "CoGPS_state").
+A data frame with two columns (the column names are "spot_ID" and "DeCEP_state").
 }
 \description{
 \code{pre_st} performs data preprocessing of ST data across different spatial contexts.
