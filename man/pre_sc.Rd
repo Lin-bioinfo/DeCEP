@@ -17,7 +17,7 @@ pre_sc(
 
 \item{label}{A data frame containing two columns (the column names are "cell_ID" and "cell_label"). It records the cellular context labels of individual cells.}
 
-\item{modes}{The running mode of CoGPS, "discrete" or "continuous".}
+\item{modes}{The running mode of DeCEP, "discrete" or "continuous".}
 
 \item{transition_point}{Numerical. The transition point of a specific gene program. It needs to be specified when modes = "continuous".}
 
