@@ -18,7 +18,7 @@ ident_sc_score <- function(x, net, seed = 1) {
 		x <- data.frame(t(as.matrix(x)))
 	}
 
-	x_smooth <- magic(as(as.matrix(x), "dgCMatrix"), genes = net$Node$Hub_gene, t = 2, seed = seed)$result
+	x_smooth <- magic(as.matrix(x), genes = net$Node$Hub_gene, t = 2, seed = seed)$result
 	x_smooth <- t(x_smooth)
 	x_smooth <- data.frame(x_smooth[match(net$Node$Hub_gene, rownames(x_smooth)),])
 	DeCEP_score <- data.frame(cell_ID = colnames(x_smooth), DeCEP_score = colMeans(x_smooth * net$Node$Weight))
