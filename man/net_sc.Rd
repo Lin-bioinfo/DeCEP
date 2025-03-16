@@ -16,7 +16,7 @@ net_sc(
 \arguments{
 \item{x}{A data frame containing single-cell gene expression data after \link{pre_sc} data preprocessing.}
 
-\item{modes}{The running mode of CoGPS, "discrete" or "continuous".}
+\item{modes}{The running mode of DeCEP, "discrete" or "continuous".}
 
 \item{genelist}{A data frame containing one column (the column name is "gene"). It records the functional gene list that reflects a specific gene program.}
 
