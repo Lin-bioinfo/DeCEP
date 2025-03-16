@@ -2,7 +2,7 @@
 % Please edit documentation in R/ident_sc.R
 \name{ident_sc_score}
 \alias{ident_sc_score}
-\title{Cell identity characterization (CoGPS score) of scRNA-seq data}
+\title{Cell identity characterization (DeCEP score) of scRNA-seq data}
 \usage{
 ident_sc_score(x, net, seed = 1)
 }
@@ -14,7 +14,7 @@ ident_sc_score(x, net, seed = 1)
 \item{seed}{Set a random seed. Setting NULL will not set a seed.}
 }
 \value{
-A data frame with two columns (the column names are "cell_ID" and "CoGPS_score").
+A data frame with two columns (the column names are "cell_ID" and "DeCEP_score").
 }
 \description{
 \code{ident_sc_score} quantifies the activity of context-specific gene program depend on \link{net_sc} for individual cells.
