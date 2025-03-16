@@ -4,7 +4,7 @@
 #' \code{net_sc} constructs the functional network and pinpoints hub genes that reflect a specific gene program in a distinct cellular context.
 #'
 #' @param x A data frame containing single-cell gene expression data after \link{pre_sc} data preprocessing.
-#' @param modes The running mode of CoGPS, "discrete" or "continuous".
+#' @param modes The running mode of DeCEP, "discrete" or "continuous".
 #' @param genelist A data frame containing one column (the column name is "gene"). It records the functional gene list that reflects a specific gene program.
 #' @param select A numerical value between 0 and 1 that specifies the top percentage of important cells involved in network construction.
 #' @param cluster The number of cores to use for parallel processing. If set to 1, no parallel processing is used.
