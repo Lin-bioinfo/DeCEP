@@ -1,4 +1,4 @@
-#' @title Data preprocessing and cell identity characterization (CoGPS state) of spatial transcriptomics (ST) data
+#' @title Data preprocessing and cell identity characterization (DeCEP state) of spatial transcriptomics (ST) data
 #'
 #' @description
 #' \code{pre_st} performs data preprocessing of ST data across different spatial contexts.
@@ -7,9 +7,9 @@
 #' @param coords A data frame with two columns (the column names are "x" and "y", corresponding to the two-dimensional coordinates of spatial locations).
 #' @param genelist A data frame containing one column (the column name is "gene"). It records the functional gene list that reflects a specific gene program.
 #' @param ref A reference scRNA-seq dataset. A data frame or a Seurat object containing single-cell gene expression data (raw count). For a data frame, each row represents a gene, and each column represents a cell.
-#' @param cell_state A data frame containing the CoGPS states of a specific gene program corresponding to individual cells in the reference scRNA-seq dataset.
+#' @param cell_state A data frame containing the DeCEP states of a specific gene program corresponding to individual cells in the reference scRNA-seq dataset.
 #' @param core_number The number of cores to use for parallel processing. If set to 1, no parallel processing is used.
-#' @return A data frame with two columns (the column names are "spot_ID" and "CoGPS_state").
+#' @return A data frame with two columns (the column names are "spot_ID" and "DeCEP_state").
 #' @import Seurat
 #' @import spacexr
 #' @import classInt
@@ -32,7 +32,7 @@ pre_st <- function(x, coords, genelist, ref, cell_state, core_number = 2) {
 	nUMI_st <- colSums(x) 
 	puck <- SpatialRNA(coords, x, nUMI_st)
 
-	ref_state <- as.factor(cell_state$CoGPS_state)
+	ref_state <- as.factor(cell_state$DeCEP_state)
 	names(ref_state) <- cell_state$cell_ID
 	nUMI_sc <- colSums(ref) 
 	reference <- Reference(ref, ref_state, nUMI_sc)
@@ -69,7 +69,7 @@ pre_st <- function(x, coords, genelist, ref, cell_state, core_number = 2) {
 	dat[apply(dat[ ,c("High_state", "Medium_state", "Low_state")], 1, sum) == 0, "state"] <- "Mixed"
 	dat[apply(dat[ ,c("High_state", "Medium_state", "Low_state")], 1, sum) == 2, "state"] <- "Mixed"
 	dat[apply(dat[ ,c("High_state", "Medium_state", "Low_state")], 1, sum) == 3, "state"] <- "Mixed"
-	CoGPS_state <- data.frame(spot_ID = rownames(dat), CoGPS_state = dat$state)
-	return(CoGPS_state)
+	DeCEP_state <- data.frame(spot_ID = rownames(dat), DeCEP_state = dat$state)
+	return(DeCEP_state)
 
 }
