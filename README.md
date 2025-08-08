@@ -69,11 +69,7 @@ DeCEP_score = ident_st_score(x_impute, involvedID, net_st)   # use data after im
 DeCEP is licensed under the GNU General Public License v3.0.
 
 ## Citation
-Please cite the following article if you use DeCEP in your research: Genome Research (doi: 10.1101/gr.279689.124
-        
-        
-        
-        
-
+Please cite the following article if you use DeCEP in your research: Genome Research (doi: 10.1101/gr.279689.124).
+   
 ## Contact
 Should you have any questions, please feel free to write issues for this repository or contact the author directly at [lin.li.bioinfo@gmail.com](lin.li.bioinfo@gmail.com).
